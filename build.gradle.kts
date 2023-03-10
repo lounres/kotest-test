@@ -31,16 +31,8 @@ kotlin {
 
     @Suppress("UNUSED_VARIABLE")
     sourceSets {
-        all {
-            languageSettings {
-                progressiveMode = true
-                optIn("kotlin.contracts.ExperimentalContracts")
-                optIn("kotlin.ExperimentalStdlibApi")
-            }
-        }
         val commonTest by getting {
             dependencies {
-                implementation(kotlin("test"))
                 with(rootProject.libs.kotest) {
                     implementation(framework.engine)
                     implementation(framework.datatest)
